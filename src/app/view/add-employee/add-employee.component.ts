@@ -23,10 +23,45 @@ export class AddEmployeeComponent implements OnInit {
     basicSalary: new FormControl('',[Validators.required]),
     status: new FormControl('',[Validators.required]),
     group: new FormControl('',[Validators.required]),
-    description: new FormControl('',[Validators.required]),
+    description: new FormControl('',[Validators.required])
   })
 
   employee: ModelEmployee = new ModelEmployee
+
+  groupList = [
+    {
+      'id': 1,
+      'groupName': "Developer",
+    },
+    {
+      'id': 2,
+      'groupName': "Quality Assurance",
+    },
+    {
+      'id': 3,
+      'groupName': "Dev Ops",
+    },
+    {
+      'id': 4,
+      'groupName': "Content Writer",
+    },
+    {
+      'id': 5,
+      'groupName': "Content Creator",
+    },
+  ]
+
+  statusList = [
+    {
+      'id': 1,
+      'statusName': "Single",
+    },
+    {
+      'id': 2,
+      'statusName': "Married",
+    }
+  ]
+  
 
   constructor(
     private router: Router,
@@ -40,7 +75,6 @@ export class AddEmployeeComponent implements OnInit {
   addEmployee() {
     console.log(this.formGroup.value)
     this.api.postAddEmployee(this.formGroup.value).subscribe((respose)=>{
-      // this.formGroup = respose;
       this.toastr.success('Add Employee Berhasil')
       this.router.navigateByUrl('/view/list-employee')
     })
@@ -49,5 +83,13 @@ export class AddEmployeeComponent implements OnInit {
 
   back() {
     this.router.navigateByUrl('/view/list-employee')
+  }
+
+  changeGroup(event:any) {
+    this.formGroup.controls['group'].setValue(event.target.value)
+  }
+
+  changeStatus(event:any) {
+    this.formGroup.controls['status'].setValue(event.target.value)
   }
 }

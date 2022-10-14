@@ -29,7 +29,7 @@
                     <tr>
                         <td>Basic Salary</td>
                         <td>:</td>
-                        <td>{{listEmployee.basicSalary}}</td>
+                        <td>{{listEmployee.basicSalary | currency:"Rp "}}</td>
                     </tr>
                     <tr>
                         <td>Status</td>
@@ -51,6 +51,6 @@
         </div>
     </div>
     <div class="float-end">
-        <button class="btn btn-warning w-100" (click)="back()">Kembali</button>
+        <button class="btn btn-warning w-100" (click)="back()">Ok</button>
     </div>
 </div>

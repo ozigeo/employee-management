@@ -23,7 +23,7 @@ export class NavbarComponent implements OnInit {
   }
 
   logout() {
-    localStorage.clear
+    localStorage.clear()
     this.router.navigateByUrl('/login')
   }
 }

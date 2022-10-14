@@ -1235,6 +1235,18 @@
       "group": "qwewqsafs",
       "description": "scxzcsfsd",
       "id": 103
+    },
+    {
+      "username": "terakhiran",
+      "firstName": "tera",
+      "lastName": "khiran",
+      "email": "terakhiran@gmail.com",
+      "birthDate": "2022-10-09",
+      "basicSalary": 2500000,
+      "status": "Single",
+      "group": "Content Writer",
+      "description": "ini description terakhiran",
+      "id": 104
     }
   ],
   "accounts": [
@@ -1262,6 +1274,11 @@
       "username": "tes2",
       "password": "asd",
       "id": 5
+    },
+    {
+      "username": "test1",
+      "password": "asd",
+      "id": 6
     }
   ],
   "profile": {

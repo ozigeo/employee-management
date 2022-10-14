@@ -18,7 +18,7 @@ export class ListEmployeeComponent implements OnInit {
   tableSize: number = 5;
   tableSizes: any = [5, 10, 15, 20];
 
-  searchValue: string = '';
+  searchValue: any = '';
 
   constructor(
     private api:ApiService,
@@ -27,7 +27,11 @@ export class ListEmployeeComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
+    this.searchValue = localStorage.getItem('searchValue')
+    localStorage.clear
+    
     this.getListEmployee();
+    this.search();
   }
 
   getListEmployee():void {
@@ -60,6 +64,7 @@ export class ListEmployeeComponent implements OnInit {
 
   viewDetail(detail:any) {
     localStorage.setItem('detail', JSON.stringify(detail))
+    localStorage.setItem('searchValue',this.searchValue)
     this.router.navigateByUrl('/view/detail-employee')
   }
 
