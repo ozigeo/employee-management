@@ -1,0 +1,56 @@
+<app-navbar></app-navbar>
+
+<div class="main">
+    <h2>Detail Employee</h2>
+    <div class="card">
+        <div class="card-body">
+            <table>
+                <tbody>
+                    <tr>
+                        <td>Username</td>
+                        <td>:</td>
+                        <td>{{listEmployee.username}}</td>
+                    </tr>
+                    <tr>
+                        <td>Name</td>
+                        <td>:</td>
+                        <td>{{listEmployee.firstName + ' ' + listEmployee.lastName}}</td>
+                    </tr>
+                    <tr>
+                        <td>Email</td>
+                        <td>:</td>
+                        <td>{{listEmployee.email}}</td>
+                    </tr>
+                    <tr>
+                        <td>Birthdate</td>
+                        <td>:</td>
+                        <td>{{listEmployee.birthDate}}</td>
+                    </tr>
+                    <tr>
+                        <td>Basic Salary</td>
+                        <td>:</td>
+                        <td>{{listEmployee.basicSalary}}</td>
+                    </tr>
+                    <tr>
+                        <td>Status</td>
+                        <td>:</td>
+                        <td>{{listEmployee.status}}</td>
+                    </tr>
+                    <tr>
+                        <td>Group</td>
+                        <td>:</td>
+                        <td>{{listEmployee.group}}</td>
+                    </tr>
+                    <tr>
+                        <td>Description</td>
+                        <td>:</td>
+                        <td>{{listEmployee.description}}</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <div class="float-end">
+        <button class="btn btn-warning w-100" (click)="back()">Kembali</button>
+    </div>
+</div>

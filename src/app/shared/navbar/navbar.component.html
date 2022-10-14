@@ -1,0 +1,18 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <a class="navbar-brand" href="/view/list-employee">&nbsp; Employee Management</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav"
+    aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarNav">
+    <ul class="navbar-nav">
+      <li class="nav-item active">
+        <a class="nav-link" href="/view/list-employee">List <span class="sr-only">(current)</span></a>
+      </li>
+    </ul>
+  </div>
+  <div class="float-end" style="margin-right: 20px;">
+    <a style="color: white;">{{username}}</a>&nbsp; &nbsp;
+    <button class="btn btn-warning" (click)="logout()">Logout</button>
+  </div>
+</nav>

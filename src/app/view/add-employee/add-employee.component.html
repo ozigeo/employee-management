@@ -1,0 +1,99 @@
+<app-navbar></app-navbar>
+
+<div class="main">
+    <h2>Add Employee</h2>
+    <div class="card">
+        <div class="card-body">
+            <form [formGroup]="formGroup">
+                <div class="form-group">
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td>Username</td>
+                                <td>:</td>
+                                <td>
+                                    <input class="form-control" formControlName="username"
+                                    [class.is-invalid] = "formGroup.get('username')?.invalid && formGroup.get('username')?.touched"
+                                    placeholder="Username">
+                                </td>
+                            </tr>
+                            <tr>
+                                <td></td>
+                                <td></td>
+                                <td>
+                                    <small class="text-danger" *ngIf = "formGroup.get('username')?.invalid && formGroup.get('username')?.touched">Username is required</small>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Name</td>
+                                <td>:</td>
+                                <td>
+                                    <div class="row">
+                                        <div class="col-6">
+                                            <input class="form-control" formControlName="firstName"
+                                            [class.is-invalid] = "formGroup.get('firstName')?.invalid && formGroup.get('firstName')?.touched"
+                                            placeholder="First Name">
+                                        </div>
+                                        <div class="col-6">
+                                            <input class="col form-control" formControlName="lastName" placeholder="Last Name">
+                                        </div>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Email</td>
+                                <td>:</td>
+                                <td><input 
+                                    [class.is-invalid] = "formGroup.get('email')?.invalid && formGroup.get('email')?.touched"
+                                    class="form-control" formControlName="email" placeholder="Email"></td>
+                            </tr>
+                            <tr>
+                                <td>Birthdate</td>
+                                <td>:</td>
+                                <td>
+                                    <input type="date" class="form-control" formControlName="birthDate"
+                                    [class.is-invalid] = "formGroup.get('birthDate')?.invalid && formGroup.get('birthDate')?.touched">
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Basic Salary</td>
+                                <td>:</td>
+                                <td><input class="form-control" formControlName="basicSalary"
+                                    [class.is-invalid] = "formGroup.get('basicSalary')?.invalid && formGroup.get('basicSalary')?.touched"
+                                    placeholder="Basic Salary" type="number"></td>
+                            </tr>
+                            <tr>
+                                <td>Status</td>
+                                <td>:</td>
+                                <td><input class="form-control" formControlName="status"
+                                    [class.is-invalid] = "formGroup.get('status')?.invalid && formGroup.get('status')?.touched"
+                                    placeholder="Status"></td>
+                            </tr>
+                            <tr>
+                                <td>Group</td>
+                                <td>:</td>
+                                <td><input class="form-control" formControlName="group"
+                                    [class.is-invalid] = "formGroup.get('group')?.invalid && formGroup.get('group')?.touched"
+                                    placeholder="Group"></td>
+                            </tr>
+                            <tr>
+                                <td>Description</td>
+                                <td>:</td>
+                                <td><input class="form-control" formControlName="description"
+                                    [class.is-invalid] = "formGroup.get('description')?.invalid && formGroup.get('description')?.touched"
+                                    placeholder="Description"></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </form>
+            
+        </div>
+    </div>
+    <div class="float-end">
+        <button class="btn btn-warning" (click)="back()">Kembali</button>
+        &nbsp;
+        <button [disabled]="formGroup.invalid" class="btn btn-success" (click)="addEmployee()">Add Employee</button>
+    </div>
+</div>
+

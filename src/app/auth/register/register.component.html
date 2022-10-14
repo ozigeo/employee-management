@@ -1,0 +1,54 @@
+<body>
+    <div class="register">
+        <h1>Register</h1>
+    
+        <form [formGroup]="account">
+            <div class="row">
+                <div class="col-2">
+                    <label class="form-label mt-1">Username</label>
+                </div>
+                <div class="col-10">
+                    <input type="text" class="form-control" formControlName="username"
+                    [class.is-invalid] = "account.get('username')?.invalid && account.get('username')?.touched"
+                    placeholder="Username">
+                </div>
+            </div>
+    
+            <div class="row mt-3">
+                <div class="col-2">
+                    <label class="form-label mt-1">Password</label>
+                </div>
+                <div class="col-10">
+                    <input type="password" class="form-control" class="form-control" formControlName="password"
+                    [class.is-invalid] = "account.get('password')?.invalid && account.get('password')?.touched"
+                    placeholder="Password">
+                </div>
+            </div>
+    
+            <div class="row mt-3">
+                <div class="col-2" style="margin-top: -10px;">
+                    <label class="form-label mt-1">Confirm Password</label>
+                </div>
+                <div class="col-10">
+                    <input type="password" class="form-control" class="form-control" formControlName="confirmPassword"
+                    [class.is-invalid] = "account.get('confirmPassword')?.invalid && account.get('confirmPassword')?.touched"
+                    placeholder="Confirm Password">
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-2"></div>
+                <div class="col-10">
+                    <small *ngIf="validatorPassword==false" class="text-danger" style="padding-left: 5px;">Password dan Confirm Password Harus Sama.</small>
+                </div>
+            </div>
+            <div class="row mt-3">
+                <div class="col-3 m-auto">
+                    <button class="btn btn-warning w-100" (click)="backToLogin()">Kembali</button>
+                </div>
+                <div class="col-3 m-auto">
+                    <button [disabled]="account.invalid" class="btn btn-primary w-100" (click)="register()">Register</button>
+                </div>
+            </div>
+        </form>
+    </div>
+</body>

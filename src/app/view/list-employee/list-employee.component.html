@@ -1,0 +1,64 @@
+<app-navbar></app-navbar>
+
+<div class="container">
+    <div class="row">
+        <div class="col-3">
+            <nav class="navbar">
+                <input type="text" class="form-control" name="searchValue" [(ngModel)]="searchValue" (ngModelChange)="search()"
+                placeholder="search">
+            </nav>
+        </div>
+        <div class="col-1 pt-2">
+            <select (change)="onTableSizeChange($event)">
+                <option *ngFor="let size of tableSizes">
+                    {{size}}
+                </option>
+            </select>
+        </div>
+        <div class="col-8">
+            <button class="btn btn-success float-end mt-2" (click)="addEmployee()">Add Employee</button>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-12">
+        <table class="table table-bordered">
+            <thead>
+            <tr>
+                <th scope="col" ><span (click)="short('firstName')" class="fa fa-sort"></span>&nbsp; Name</th>
+                <th scope="col"><span (click)="short('email')" class="fa fa-sort"></span>&nbsp; Email</th>
+                <th scope="col"><span (click)="short('group')" class="fa fa-sort"></span>&nbsp; Group</th>
+                <th scope="col">Action</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr *ngFor="let list of listEmployee | orderBy: shortValue: reverse |  paginate:{
+                itemsPerPage: tableSize,
+                currentPage: page,
+                totalItems: count
+            }; let i = index">
+                <td>{{list.firstName+' '+list.lastName}}</td>
+                <td>{{list.email}}</td>
+                <td>{{list.group}}</td>
+                <td>
+                <button type="button" class="btn btn-primary"><i class="far fa-eye" (click)="viewDetail(list)"></i></button>
+                &nbsp;
+                <button type="button" class="btn btn-warning"><i class="fas fa-edit" (click)="toEditEmployee(list)"></i></button>
+                &nbsp;
+                <button type="button" class="btn btn-danger"><i class="far fa-trash-alt" (click)="toDeleteEmployee(list)"></i></button>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+        </div>
+    </div>
+
+    <div>
+        <pagination-controls
+            previousLabel="Prev"
+            nextLabel="Next"
+            (pageChange)="onTableDataChange($event)"
+        >
+        </pagination-controls>
+    </div>
+</div>

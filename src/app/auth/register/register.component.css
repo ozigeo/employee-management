@@ -1,0 +1,14 @@
+.register {
+    width: 500px;
+    padding: 20px;
+    border-radius: 10px;
+    background: white;
+}
+
+body {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgb(181, 174, 174);
+}
