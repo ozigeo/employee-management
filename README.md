@@ -19,7 +19,7 @@ Run `ng serve --o` for a dev server. Navigate to `http://localhost:4200/`. The a
 - type 'git clone https://github.com/ozigeo/employee-management.git' 
 - go to project folder(../employee-management) and type 'npm i' 
 - start application with 'ng s --o'
-- start json ../angular/employee-management/src/fake-api 'json-server --watch db.json --port3004'
+- start json ../angular/employee-management/src/fake-api 'json-server --watch db.json --port 3004'
 
 ## Note
 
